@@ -8,16 +8,19 @@ namespace GO_Bot.Internals {
 
 	internal class GoSettings : ISettings {
 
-		public AuthType AuthType { get; set; } = AuthType.Ptc;
+		public AuthType AuthType { get; set; } = AuthType.Google;
 
-		public double DefaultAltitude {
-			get {
-				return 10;
+		public double DefaultAltitude
+        {
+			get
+            {
+				return 17;
 			}
 		}
 
-		public double DefaultLatitude { get; set; } = 52.379189;
-		public double DefaultLongitude { get; set; } = 4.899431;
+        // Coordinates for Central Park, NY, USA
+		public double DefaultLatitude { get; set; } = 40.7828687;
+		public double DefaultLongitude { get; set; } = -73.9675438;
 		public string GoogleRefreshToken { get; set; } = String.Empty;
 
 		public ICollection<KeyValuePair<ItemId, int>> itemRecycleFilter {
@@ -32,6 +35,9 @@ namespace GO_Bot.Internals {
 
 		public string PtcPassword { get; set; } = String.Empty;
 		public string PtcUsername { get; set; } = String.Empty;
+        public string GglPassword { get; set; } = String.Empty;
+        public string GglUsername { get; set; } = String.Empty;
+
 
 	}
 

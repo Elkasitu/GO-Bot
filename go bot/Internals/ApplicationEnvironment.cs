@@ -14,12 +14,12 @@ namespace GO_Bot.Internals {
 			Directory.CreateDirectory(directoryPath);
 		}
 
-		public static string UserProfile() {
-			return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+		public static string AppData() {
+			return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 		}
 
 		public static string MainDirectory() {
-			return UserProfile() + "\\GO Bot";
+			return AppData() + "\\GO Bot";
 		}
 
 		public static string SettingsDirectory() {

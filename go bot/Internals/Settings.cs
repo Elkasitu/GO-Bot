@@ -42,8 +42,10 @@ namespace GO_Bot.Internals {
 		public double WindowHeight;
 		public string PtcUsername;
 		public string PtcPassword;
-		public double Latitude = 39.986855;
-		public double Longitude = -75.196442;
+        public string GglUsername;
+        public string GglPassword;
+		public double Latitude = 40.7828687;
+		public double Longitude = -73.9675438;
 
 	}
 

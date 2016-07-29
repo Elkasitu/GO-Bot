@@ -37,9 +37,9 @@ namespace GO_Bot.Views {
 					GoSettings goSettings = new GoSettings();
 
 					logger.Info("Setting up...");
-					goSettings.AuthType = AuthType.Ptc;
-					await txtUsername.SafeAccessAsync((t) => goSettings.PtcUsername = t.Text);
-					await txtPassword.SafeAccessAsync((t) => goSettings.PtcPassword = t.Password);
+					goSettings.AuthType = AuthType.Google;
+					await txtUsername.SafeAccessAsync((t) => goSettings.GglUsername = t.Text);
+					await txtPassword.SafeAccessAsync((t) => goSettings.GglPassword = t.Password);
 					await dudLatitude.SafeAccessAsync((d) => goSettings.DefaultLatitude = d.Value ?? 0);
 					await dudLongitude.SafeAccessAsync((d) => goSettings.DefaultLongitude = d.Value ?? 0);
 
@@ -51,10 +51,10 @@ namespace GO_Bot.Views {
 						if (e is PtcOfflineException) {
 							logger.Info("Could not log in (login servers may be down or invalid credentials)");
 						} else {
-							logger.Error(e);
+							logger.Info("Could not log in!");
 						}
 					}
-					
+                    logger.Info("Successfully logged in (?)");
 					return true;
 				}).Result;
 			});
